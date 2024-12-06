@@ -27,16 +27,17 @@ const Edit = ({ navigation, route }) => {
     };
 
     const handleDelete = () => {
-        Alert.alert('Confirm Deletion', 'Are you sure you want to delete this item?', [
+        Alert.alert('Confirming', 'want to delete?', [
+            { text: 'No' },
             {
                 text: 'Yes',
                 onPress: () => {
                     datasource[sectionIndex].data.splice(itemIndex, 1);
-                    Alert.alert('Success', 'Module deleted successfully.');
+                    Alert.alert('Done!', 'Deleted.');
                     navigation.navigate('Home');
                 },
             },
-            { text: 'No' },
+
         ]);
     };
 
